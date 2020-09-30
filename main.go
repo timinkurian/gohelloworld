@@ -8,8 +8,8 @@ import (
 
 func main() {
 	handler := http.NewServeMux()
-	handler.HandleFunc("/api/hello", SayHello)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	handler.HandleFunc("/", SayHello)
+	log.Fatal(http.ListenAndServe(":80", nil))
 }
 func SayHello(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello world")
